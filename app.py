@@ -60,6 +60,10 @@ def display_predictions(predictions):
     if predictions:
         for prediction in predictions:
             st.write(f"{prediction.tag_name}: {prediction.probability:.2%}")
+        # Get the breed with highest probability
+        top_prediction = predictions[0]
+        breed = top_prediction.tag_name
+        st.write(f"### Yay! It's a {breed} 🐶", unsafe_allow_html=True)
     else:
         st.write("No predictions available.")
 
