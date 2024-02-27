@@ -6,19 +6,13 @@ Azure [Custom Vision](https://docs.microsoft.com/azure/cognitive-services/custom
 
 Over the course of this workshop you will build a model to detect dog breeds. You'll start by installing and configuring the necessary tools, then creating the custom model by uploading and tagging images, and finally use the model with a software development kit (SDK).
 
-| **Project Goal**              | Learn about Custom Vision AI and how to use it to train and test images                                    |
-| ----------------------------- | --------------------------------------------------------------------- |
-| **What will you learn**       | Use images to train a model to be able to perform inference to classify images                                        |
-| **What you'll need**          | Python 3.8+, Visual Studio Code, Git |
-| **Duration**                  | 1 hour                                                                |
-| **Just want to try the app or see the solution?** | [Solution](./solution)                         |
-| **Slides** | [Powerpoint](slides.pptx)
-| **Author** | [Christopher Harrison](https://geektrainer.dev)
-
-## Video walk-through
-
-[![workshop walk-through](./images/promo.png)](https://youtu.be/YWTDxcHAfkA "workshop walk-through")
-> 🎥 Click this image to watch Christopher walk you through the workshop
+| **Project Goal**        | Learn about Custom Vision AI and how to use it to train and test images        |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| **What will you learn** | Use images to train a model to be able to perform inference to classify images |
+| **What you'll need**    | Python 3.8+, Visual Studio Code, Git                                           |
+| **Duration**            | 1 hour                                                                         |
+| **Slides**              | [Powerpoint](slides.pptx)                                                      |
+| **Author**              | [Christopher Harrison](https://geektrainer.dev)                                |
 
 ## What you'll build with CustomVision.ai
 
@@ -39,7 +33,7 @@ python3 --version
 pip3 --version
 ```
 
-If Python and pip are installed a version number will be displayed, such as *3.8.10*. Otherwise, an error message is displayed. You can install Python and pip as needed:
+If Python and pip are installed a version number will be displayed, such as _3.8.10_. Otherwise, an error message is displayed. You can install Python and pip as needed:
 
 - [Windows](https://docs.microsoft.com/windows/python/beginners?WT.mc_id=academic-49102-chrhar#install-python)
 - [MacOS](https://www.python.org/downloads/macos/)
