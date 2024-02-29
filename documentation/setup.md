@@ -12,7 +12,7 @@ A starter project has been provided which includes the images for the workshop a
 
 1. Navigate to [https://github.com/Bunny77K9/custom-vision-workshop/](https://github.com/Bunny77K9/custom-vision-workshop/)
 1. Select **Use this template** to create a copy of the repository in your GitHub account
-1. Name the new repository **workshop-library**
+1. Name the new repository **custom-vision-workshop**
 1. Select **Create repository from template**
 1. When the new repository opens, select **Code**
 1. Select the **Local** tab and then the **Copy** button
