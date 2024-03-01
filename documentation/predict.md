@@ -181,10 +181,3 @@ With the program created, let's run it and see what happens!
     ```
 
     > **Note**: Your percentages may not exactly match those above
-
-## Summary
-
-Congratulations! You have successfully created and called a custom vision model. The model you created can be used to classify image types. You can also create models to detect certain objects in an image. If you want to continue to grow your skills:
-
-- [Object detection with Custom Vision](https://docs.microsoft.com/learn/modules/detect-objects-images-custom-vision/?WT.mc_id=academic-49102-chrhar)
-- [Creating custom models with TensorFlow](https://docs.microsoft.com/learn/paths/tensorflow-fundamentals/?WT.mc_id=academic-49102-chrhar)
