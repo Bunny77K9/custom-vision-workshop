@@ -1,8 +1,6 @@
-To create and deploy the Streamlit app to Streamlit Cloud, you can follow these steps:
+# Part 1: Train your model
 
-### Part 3: Create and Deploy Streamlit App
-
-#### 1. Create the Streamlit App
+## 1. Create the Streamlit App
 
 First, create a new file named `app.py` and paste the Streamlit app code into it.
 
@@ -80,7 +78,7 @@ if __name__ == "__main__":
     main()
 ```
 
-#### 2. Test the App Locally
+## 2. Test the App Locally
 
 Before deploying the app, it's a good idea to test it locally to ensure everything works as expected. You can run the app using the following command in your terminal:
 
@@ -88,7 +86,7 @@ Before deploying the app, it's a good idea to test it locally to ensure everythi
 streamlit run app.py
 ```
 
-#### 3. Deploy to Streamlit Cloud
+## 3. Deploy to Streamlit Cloud
 
 To deploy the app to Streamlit Cloud, follow these steps:
 
