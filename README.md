@@ -12,7 +12,7 @@ Over the course of this workshop you will build a model to detect dog breeds. Yo
 | **What you'll need**    | Python 3.8+, Visual Studio Code, Git                                           |
 | **Duration**            | 1 hour                                                                         |
 | **Slides**              | [Powerpoint](slides.pptx)                                                      |
-| **Author**              | [Christopher Harrison](https://geektrainer.dev)                                |
+| **Authors**              | [Christopher Harrison](https://geektrainer.dev), [Nandun Diaz](https://linkedin.com/in/nandundiaz)                                 |
 
 ## What you'll build with CustomVision.ai
 
