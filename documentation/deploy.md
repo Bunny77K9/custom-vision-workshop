@@ -99,3 +99,11 @@ To deploy the app to Streamlit Cloud, follow these steps:
 - Add the environment variables required for your app, such as KEY, ENDPOINT, PROJECT_ID, and PUBLISHED_ITERATION_NAME. Enter the appropriate values for each variable.
 - Once you've added all the necessary environment variables, save your changes and proceed with the deployment process. Streamlit Community Cloud will now deploy your app with the specified environment variables.
 That's it! Your Streamlit app is now deployed and accessible to anyone with the URL. You can continue to make updates to your GitHub repository, and Streamlit Cloud will automatically deploy the changes.
+
+
+## Summary
+
+Congratulations! You have successfully created and deployed a custom vision app. The app you created can be used to classify dog breeds. You can also create models to detect certain objects in an image. If you want to continue to grow your skills:
+
+- [Object detection with Custom Vision](https://docs.microsoft.com/learn/modules/detect-objects-images-custom-vision/?WT.mc_id=academic-49102-chrhar)
+- [Creating custom models with TensorFlow](https://docs.microsoft.com/learn/paths/tensorflow-fundamentals/?WT.mc_id=academic-49102-chrhar)
