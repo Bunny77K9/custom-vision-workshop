@@ -1,4 +1,4 @@
-# Part 1: Train your model
+# Part 3: Create and Deploy Streamlit App
 
 ## 1. Create the Streamlit App
 
