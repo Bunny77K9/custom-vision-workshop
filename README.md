@@ -48,7 +48,7 @@ The instructions for this workshop assume you are using [Visual Studio Code](htt
 - [Part 0: Install and configure tools](./documentation/setup.md)
 - [Part 1: Train your model](./documentation/train.md)
 - [Part 2: Test your model](./documentation/predict.md)
-- [Part 2: Deploy your model](./documentation/deploy.md)
+- [Part 3: Deploy your model](./documentation/deploy.md)
 
 ## Feedback
 
