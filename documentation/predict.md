@@ -181,3 +181,7 @@ With the program created, let's run it and see what happens!
     ```
 
     > **Note**: Your percentages may not exactly match those above
+
+## Summary
+
+Congratulations! You have created up a custom vision model which can detect dog types. Next you'll [create and deploy the app](./deploy.md).
