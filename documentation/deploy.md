@@ -1,14 +1,4 @@
-Here’s your full write-up, combining all the steps (coding, testing, and deployment) into a single, well-structured guide. This version integrates everything you’ve shared and adds clarity where needed:
-
----
-
-# 🐶 Dog Breed Prediction App using Azure Custom Vision & Streamlit
-
-This guide walks you through creating, testing, and deploying a Streamlit web app that uses Azure Custom Vision to predict dog breeds from images.
-
----
-
-## 🛠 Part 1: Project Setup
+# Part 3: Create and Deploy Streamlit App
 
 ### ✅ Directory Structure
 
