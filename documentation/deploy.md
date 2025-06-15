@@ -1,8 +1,90 @@
-# Part 3: Create and Deploy Streamlit App
+Here’s your full write-up, combining all the steps (coding, testing, and deployment) into a single, well-structured guide. This version integrates everything you’ve shared and adds clarity where needed:
 
-## 1. Create the Streamlit App
+---
 
-First, create a new file named `app.py` and paste the Streamlit app code into it.
+# 🐶 Dog Breed Prediction App using Azure Custom Vision & Streamlit
+
+This guide walks you through creating, testing, and deploying a Streamlit web app that uses Azure Custom Vision to predict dog breeds from images.
+
+---
+
+## 🛠 Part 1: Project Setup
+
+### ✅ Directory Structure
+
+```
+dog-breed-app/
+├── .env.example          # Sample environment variable file
+├── requirements.txt      # Python dependencies
+├── app/
+│   └── streamlit_app.py  # Streamlit app code
+```
+
+---
+
+## ⚙️ Part 2: Prepare the Environment
+
+### ✅ 1. Create a virtual environment
+
+**On macOS/Linux:**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**On Windows:**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+---
+
+### ✅ 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Your `requirements.txt` should contain:
+
+```txt
+streamlit
+azure-cognitiveservices-vision-customvision
+msrest
+python-dotenv
+requests
+Pillow
+```
+
+---
+
+### ✅ 3. Create a `.env` file
+
+Make a copy of `.env.example` and rename it to `.env`, then fill in your Azure Custom Vision credentials:
+
+```bash
+cp .env.example .env  # Use `copy .env.example .env` on Windows
+```
+
+Edit `.env`:
+
+```env
+KEY=your_azure_prediction_key
+ENDPOINT=https://your-resource-name.cognitiveservices.azure.com/
+PROJECT_ID=your_project_id
+PUBLISHED_ITERATION_NAME=your_iteration_name
+```
+
+---
+
+## 👨‍💻 Part 3: Create and Deploy Streamlit App
+
+### ✅ 1. Create the Streamlit App
+
+In `app/streamlit_app.py`, paste the following code:
 
 ```python
 import streamlit as st
@@ -13,30 +95,24 @@ from PIL import Image
 from io import BytesIO
 import os
 
-# Load environment variables
 from dotenv import load_dotenv
 load_dotenv()
 
-# Load Azure Custom Vision credentials
 KEY = os.getenv('KEY')
 ENDPOINT = os.getenv('ENDPOINT')
 PROJECT_ID = os.getenv('PROJECT_ID')
 PUBLISHED_ITERATION_NAME = os.getenv('PUBLISHED_ITERATION_NAME')
 
-# Create prediction client
 credentials = ApiKeyCredentials(in_headers={'Prediction-key': KEY})
 client = CustomVisionPredictionClient(ENDPOINT, credentials)
 
-# Function to perform prediction
 def predict_image(image):
     results = client.classify_image(PROJECT_ID, PUBLISHED_ITERATION_NAME, image)
     return results.predictions
 
-# Streamlit app
 def main():
-    st.title("Dog Breed Prediction App")
+    st.title("🐶 Dog Breed Prediction App")
 
-    # User input: image upload or URL
     option = st.radio("Choose Input Option:", ('Upload Image', 'Image URL'))
 
     if option == 'Upload Image':
@@ -61,13 +137,11 @@ def main():
             except Exception as e:
                 st.error("Error loading image from URL. Please check the URL and try again.")
 
-# Function to display predictions
 def display_predictions(predictions):
     st.subheader("Predictions:")
     if predictions:
         for prediction in predictions:
             st.write(f"{prediction.tag_name}: {prediction.probability:.2%}")
-        # Get the breed with highest probability
         top_prediction = predictions[0]
         breed = top_prediction.tag_name
         st.write(f"### Yay! It's a {breed} 🐶", unsafe_allow_html=True)
@@ -78,32 +152,62 @@ if __name__ == "__main__":
     main()
 ```
 
-## 2. Test the App Locally
+---
 
-Before deploying the app, it's a good idea to test it locally to ensure everything works as expected. You can run the app using the following command in your terminal:
+### ✅ 2. Test the App Locally
+
+Run the app from the **project root**:
 
 ```bash
-streamlit run app.py
+streamlit run app/streamlit_app.py
 ```
 
-## 3. Deploy to Streamlit Cloud
+Then open the browser at [http://localhost:8501](http://localhost:8501)
 
-To deploy the app to Streamlit Cloud, follow these steps:
+---
 
-- Sign in to Streamlit Cloud or create a new account if you haven't already.
-- Once logged in, navigate to the dashboard and click on the "New app" button.
-- Choose the option to deploy from GitHub and connect your GitHub repository where the app code is located.
-- Select the branch containing your app code and specify the path to the app file (e.g., `app.py`).
-- After selecting your GitHub repository and branch, you'll reach the "Advanced Settings" section during the deployment process. In this section, you can configure additional settings for your app.
-- Look for an option or section labeled "Secrets" or similar. Streamlit Community Cloud allows you to add key-value pairs for environment variables here.
-- Add the environment variables required for your app, such as KEY, ENDPOINT, PROJECT_ID, and PUBLISHED_ITERATION_NAME. Enter the appropriate values for each variable.
-- Once you've added all the necessary environment variables, save your changes and proceed with the deployment process. Streamlit Community Cloud will now deploy your app with the specified environment variables.
-That's it! Your Streamlit app is now deployed and accessible to anyone with the URL. You can continue to make updates to your GitHub repository, and Streamlit Cloud will automatically deploy the changes.
+## 🚀 Part 4: Deploy to Streamlit Cloud
 
+1. **Push your code** to a GitHub repository (public or private).
 
-## Summary
+2. Go to [https://streamlit.io/cloud](https://streamlit.io/cloud) and sign in.
 
-Congratulations! You have successfully created and deployed a custom vision app. The app you created can be used to classify dog breeds. You can also create models to detect certain objects in an image. If you want to continue to grow your skills:
+3. Click **"New app"** and choose your GitHub repository.
 
-- [Object detection with Custom Vision](https://docs.microsoft.com/learn/modules/detect-objects-images-custom-vision/?WT.mc_id=academic-49102-chrhar)
-- [Creating custom models with TensorFlow](https://docs.microsoft.com/learn/paths/tensorflow-fundamentals/?WT.mc_id=academic-49102-chrhar)
+4. In the **App file path**, set:
+
+   ```
+   app/streamlit_app.py
+   ```
+
+5. In **Advanced Settings**, set environment variables:
+
+   | Name                       | Value                        |
+   | -------------------------- | ---------------------------- |
+   | `KEY`                      | your Azure Custom Vision key |
+   | `ENDPOINT`                 | your endpoint URL            |
+   | `PROJECT_ID`               | your project ID              |
+   | `PUBLISHED_ITERATION_NAME` | your iteration name          |
+
+6. Click **Deploy** — your app is live! 🎉
+
+---
+
+## ✅ Summary
+
+You’ve now:
+
+* Built a full-stack image classification app with Streamlit and Azure
+* Used environment variables for secure configuration
+* Deployed the app to Streamlit Community Cloud
+
+---
+
+## 📚 Continue Learning
+
+* [🔍 Object detection with Custom Vision](https://learn.microsoft.com/en-us/training/modules/detect-objects-images-custom-vision/)
+* [🧠 TensorFlow Fundamentals](https://learn.microsoft.com/en-us/training/paths/tensorflow-fundamentals/)
+
+---
+
+Let me know if you want to add **Docker support**, **CI/CD with GitHub Actions**, or a **custom domain** setup.
