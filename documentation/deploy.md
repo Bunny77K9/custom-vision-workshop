@@ -197,7 +197,3 @@ You’ve now:
 
 * [🔍 Object detection with Custom Vision](https://learn.microsoft.com/en-us/training/modules/detect-objects-images-custom-vision/)
 * [🧠 TensorFlow Fundamentals](https://learn.microsoft.com/en-us/training/paths/tensorflow-fundamentals/)
-
----
-
-Let me know if you want to add **Docker support**, **CI/CD with GitHub Actions**, or a **custom domain** setup.
